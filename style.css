@@ -1,0 +1,361 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Montserrat", sans-serif;
+    background:
+        radial-gradient(circle at top, #5c1738 0%, #250d20 45%, #100611 100%);
+    color: white;
+    overflow-x: hidden;
+}
+
+
+/* ANA EKRAN */
+
+.welcome-screen,
+.surprise-screen {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* BÜYÜK KALP */
+
+.main-heart {
+    font-size: 70px;
+    margin-bottom: 15px;
+    animation: heartbeat 1.6s infinite;
+    filter: drop-shadow(0 0 25px rgba(255, 80, 140, 0.6));
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.15);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.15);
+    }
+
+    60% {
+        transform: scale(1);
+    }
+}
+
+
+/* BAŞLIK */
+
+h1 {
+    font-family: "Great Vibes", cursive;
+    font-size: clamp(55px, 12vw, 90px);
+    font-weight: 400;
+    margin-bottom: 10px;
+    text-shadow: 0 0 25px rgba(255, 100, 160, 0.5);
+}
+
+.intro-text {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.small-text {
+    max-width: 500px;
+    font-size: 14px;
+    line-height: 1.7;
+    opacity: 0.75;
+    margin-bottom: 35px;
+}
+
+
+/* SORU KARTLARI */
+
+.question-box {
+    width: min(500px, 100%);
+    padding: 25px;
+    margin-bottom: 18px;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 22px;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+
+    transition: 0.3s ease;
+}
+
+.question-box:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.11);
+}
+
+.question-number {
+    font-size: 12px;
+    letter-spacing: 3px;
+    opacity: 0.55;
+    margin-bottom: 10px;
+}
+
+.question-box h2 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.question-box p {
+    font-size: 12px;
+    opacity: 0.55;
+    margin-bottom: 15px;
+}
+
+
+/* INPUT */
+
+.question-box input {
+    width: 100%;
+    padding: 15px 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 14px;
+
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+
+    outline: none;
+    font-size: 14px;
+    text-align: center;
+
+    transition: 0.3s ease;
+}
+
+.question-box input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.question-box input:focus {
+    border-color: rgba(255, 120, 170, 0.8);
+    box-shadow: 0 0 20px rgba(255, 70, 140, 0.2);
+}
+
+
+/* BUTON */
+
+.continue-button,
+.surprise-screen button {
+    border: none;
+    outline: none;
+
+    padding: 16px 30px;
+
+    border-radius: 50px;
+
+    background: linear-gradient(
+        135deg,
+        #ff4f91,
+        #ff174f
+    );
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px rgba(255, 30, 100, 0.3);
+
+    transition: 0.3s ease;
+
+    margin-top: 10px;
+}
+
+.continue-button:hover,
+.surprise-screen button:hover {
+    transform: translateY(-3px) scale(1.03);
+
+    box-shadow:
+        0 15px 40px rgba(255, 30, 100, 0.45);
+}
+
+.continue-button:active,
+.surprise-screen button:active {
+    transform: scale(0.97);
+}
+
+
+/* HATA MESAJI */
+
+#error-message {
+    min-height: 22px;
+    margin-top: 15px;
+
+    color: #ff9bbb;
+
+    font-size: 13px;
+}
+
+
+/* SÜRPRİZ EKRANI */
+
+.surprise-screen {
+    display: none;
+}
+
+.surprise-screen p {
+    font-size: 22px;
+    margin: 10px 0 25px;
+}
+
+
+/* ARKA PLAN KALPLERİ */
+
+.hearts-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hearts-container::before,
+.hearts-container::after {
+    content: "❤️  ♥  💗  ♡  ❤️  💕  ♥";
+
+    position: absolute;
+    width: 100%;
+    font-size: 20px;
+    opacity: 0.12;
+
+    animation: floatingHearts 15s linear infinite;
+}
+
+.hearts-container::before {
+    top: 100%;
+}
+
+.hearts-container::after {
+    top: 120%;
+    animation-delay: 7s;
+}
+
+@keyframes floatingHearts {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-140vh);
+    }
+}
+
+
+/* TELEFON */
+
+@media (max-width: 600px) {
+
+    .welcome-screen,
+    .surprise-screen {
+        padding: 25px 15px;
+    }
+
+    .main-heart {
+        font-size: 60px;
+    }
+
+    .intro-text {
+        font-size: 18px;
+    }
+
+    .question-box {
+        padding: 20px;
+    }
+
+    .question-box h2 {
+        font-size: 16px;
+    }
+
+    .continue-button {
+        width: 100%;
+        max-width: 500px;
+    }
+}
+
+/* FOTOĞRAF HİKAYESİ */
+
+.photo-story {
+    display: none;
+    width: 100%;
+    max-width: 500px;
+    margin: 35px auto 0;
+    text-align: center;
+    animation: storyFade 0.8s ease;
+}
+
+.photo-story img {
+    width: 100%;
+    max-width: 380px;
+    max-height: 480px;
+    object-fit: cover;
+    border-radius: 25px;
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 15px 45px rgba(255, 20, 100, 0.35);
+}
+
+#storyText {
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+    margin: 25px auto;
+    max-width: 400px;
+    padding: 0 15px;
+}
+
+#nextPhoto {
+    border: none;
+    outline: none;
+    padding: 15px 35px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #ff4f91, #ff174f);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(255, 23, 79, 0.35);
+}
+
+@keyframes storyFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}

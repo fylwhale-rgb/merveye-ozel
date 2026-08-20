@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Merve'ye Özel ❤️</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <audio id="ourSong" preload="auto" loop>
+    <source src="muzik54.mp3" type="audio/mpeg">
+</audio>
+
+    <!-- Hareketli kalpler -->
+    <div class="hearts-container"></div>
+
+
+    <!-- GİRİŞ EKRANI -->
+    <main class="welcome-screen" id="quiz-screen">
+
+        <div class="main-heart">
+            ❤️
+        </div>
+
+        <h1>Merve...</h1>
+
+        <p class="intro-text">
+            Burası sadece sana özel.
+        </p>
+
+        <p class="small-text">
+            Buraya girebilmek için bizimle ilgili iki şeyi hatırlaman gerekiyor. ❤️
+        </p>
+
+
+        <!-- 1. SORU -->
+        <div class="question-box">
+
+            <div class="question-number">
+                01
+            </div>
+
+            <h2>
+                Biz ilk ne zaman tanıştık?
+            </h2>
+
+            <p>
+                Tarihi ve saati birlikte yaz.
+            </p>
+
+            <input
+                type="text"
+                id="answer1"
+                placeholder="Örn: 20 ocak 14.35"
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <!-- 2. SORU -->
+        <div class="question-box">
+
+            <div class="question-number">
+                02
+            </div>
+
+            <h2>
+                Benim doğum tarihim ne?
+            </h2>
+
+            <p>
+                Gün, ay ve yıl olarak yaz.
+            </p>
+
+            <input
+                type="text"
+                id="answer2"
+                placeholder="Örn: 23/01/2007"
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <!-- DEVAM BUTONU -->
+        <button class="continue-button" onclick="checkAnswers()">
+            Beni gerçekten tanıyor musun? ❤️
+        </button>
+
+
+        <!-- HATA MESAJI -->
+        <p id="error-message"></p>
+
+    </main>
+
+
+    <!-- SÜRPRİZ EKRANI -->
+    <main class="surprise-screen" id="surprise-screen">
+
+        <div class="main-heart">
+            💗
+        </div>
+
+        <h1>
+            Seni çok seviyorum canımın içi 
+        </h1>
+
+        <p>
+            Hoş geldin Merve. ❤️
+        </p>
+
+        <button onclick="startStory()">
+            Sana söylemek istediklerime geç
+        </button>
+
+        <div class="photo-story" id="photoStory">
+
+    <img id="storyPhoto" src="" alt="Biz">
+
+    <p id="storyText"></p>
+
+    <button id="nextPhoto" onclick="nextStoryPhoto()">
+        Devam ❤️
+    </button>
+
+</div>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
