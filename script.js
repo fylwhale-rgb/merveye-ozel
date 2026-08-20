@@ -61,19 +61,19 @@ function checkAnswers() {
 }
 const storyPhotos = [
     {
-        image: "fotoğraflar/foto1.jpeg",
+        image: "foto1.jpeg",
         text: "Bütün güzel anılarımızın içinde en güzeli, seninle olanlarım... ❤️"
     },
     {
-        image: "fotoğraflar/foto2.jpeg",
+        image: "foto2.jpeg",
         text: "Seninle geçirdiğim her an benim için gerçekten çok değerli. 🥹❤️"
     },
     {
-        image: "fotoğraflar/foto3.jpeg",
+        image: "foto3.jpeg",
         text: "Bazen her şeyi geride bırakıp sadece ikimizin güzel günlerini düşünüyorum..."
     },
     {
-        image: "fotoğraflar/foto4.jpeg",
+        image: "foto4.jpeg",
         text: "Merve... Seni çok seviyorum. Ve bizim hikâyemizin burada bitmesini istemiyorum. ❤️"
     }
 ];
